@@ -4,9 +4,9 @@ services:
   db:
     image: postgres:11.4-alpine
     environment:
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: password
       TZ: Asia/Tokyo
-  web:
+  free:
     build:
       context: .
       dockerfile: Dockerfile.ci
