@@ -1,53 +1,98 @@
 <nav class="navbar is-warning" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <h1 class="title is-4">Skill_share</h1>
-    </a>
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <h1 class="title is-4">Skill-Share</h1>
+        </a>
 
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
 
-  <div id="navbarBasicExample" class="navbar-menu">
-   <div class="navbar-start">
-        <div class="navbar-item">
-            <div class="field has-addons">
-                <div class="control">
-                    <input class="input" type="text" placeholder="Find services">
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item">
+                <div class="field has-addons">
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Find services">
+                    </div>
+                    <div class="control">
+                        <a class="button is-danger">Search</a>
+                    </div>
                 </div>
-                <div class="control">
-                    <a class="button is-danger">Search</a>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <a class="navbar-item">Post Gig</a>
+            <a class="navbar-item">Browse Gigs</a>
+
+            <% if (!user_signed_in?) %>
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <%= link_to  "Sign Up", new_user_registration_path, class: "button is-primary" %>
+                        <%= link_to  "Login", new_user_session_path, class: "button is-light" %>
+                    </div>
+                </div>
+            <% else %>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-item"><%= current_user.full_name %></a>
+
+                    <div class="navbar-dropdown">
+                        <%= link_to  "Profile", edit_user_registration_path, class: "navbar-item" %>
+                        <a href="" class="navbar-item">Dashboard</a>
+                        <hr class="navbar-divider">
+                        <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "navbar-item" %>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar has-shadow">
+    <div class="container">
+        <div class="navbar">
+            <%= link_to 'Dashboard', dashboard_path, class: "navbar-item" %>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">Selling</a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">Create New Gig</a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">Buying</a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">Post Request</a>
+                    <a class="navbar-item">Manage Requests</a>
+                </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">Buyer Requests</a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">Active Request</a>
+                    <a class="navbar-item">Offers Sent</a>
+                </div>
+            </div><div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">Orders</a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">Selling Orders</a>
+                    <a class="navbar-item">Buying Orders</a>
+                </div>
+            </div>
+            <%= link_to 'Earnings', dashboard_path, class: "navbar-item" %>
+            <%= link_to 'Messages', dashboard_path, class: "navbar-item" %>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">Settings</a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">Payment Method</a>
+                    <a class="navbar-item">Payout Method</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="navbar-end">
-        <a class="navbar-item">Post Gig</a>
-        <a class="navbar-item">Browse Gigs</a>
-        <% if (!user_signed_in?) %>
-            <div class="navbar-item">
-                <div class="buttons">
-                    <%= link_to  "Sign Up", new_user_registration_path, class: "button is-primary" %>
-                    <%= link_to  "Login", new_user_session_path, class: "button is-light" %>
-                </div>
-            </div>
-        <% else %>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-item"><%= current_user.full_name %></a>
-
-                <div class="navbar-dropdown">
-                    <%= link_to  "Profile", edit_user_registration_path, class: "navbar-item" %>
-                    <a href="" class="navbar-item">Dashboard</a>
-                    <hr class="navbar-divider">
-                    <%= link_to  "Log out", destroy_user_session_path, method: :delete, class: "navbar-item" %>
-                </div>
-            </div>
-        <% end %>
-    </div>
-  </div>
 </nav>
 
 <script>
