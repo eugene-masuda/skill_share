@@ -1,0 +1,18 @@
+require:
+  - rubocop-airbnb
+
+Rails:
+  Enabled: true
+
+AllCops:
+  # 除外
+  Exclude:
+    - vendor/bundle/**/*
+    - 'bin/**'
+    - 'lib/**'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*' 
+    - 'node_modules/**/*'
+    - '.git/**/*'
+    - 'spec/spec_helper.rb'
