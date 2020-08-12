@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bulma-rails'
 gem 'bulma-extensions-rails'
 gem 'devise'
-gem 'faker','=1.9.3'
+gem 'faker', '=1.9.3'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

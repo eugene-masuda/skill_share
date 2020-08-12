@@ -3,7 +3,12 @@ require:
 
 Rails:
   Enabled: true
-
+Semicolon:
+  Enabled: false
+LineLength:
+  Max: 150
+EnumHash:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
