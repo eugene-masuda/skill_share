@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root 'pages#home'
   get '/users/:id', to: 'users#show'
   get '/dashboard', to: 'users#dashboard'
-  
+  get '/selling_orders', to: 'orders#selling_orders'
+  get '/buying_orders', to: 'orders#buying_orders'
   post '/users/edit', to: 'users#update'
+  put '/orders/:id/complete', to: 'orders#complete', as: 'complete_order'
 
   resources :gigs do
     member do
@@ -17,6 +19,6 @@ Rails.application.routes.draw do
   devise_for :users, 
   path: '', 
   path_names: { sign_in: 'login', edit: 'profile', sign_out: 'logout' },
-  controllers: { registrations: 'registrations' }
+  controllers: { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
 
 end

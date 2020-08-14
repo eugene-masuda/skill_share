@@ -13,6 +13,8 @@ MethodCallWithoutArgsParentheses:
   Enabled: false
 BelongsTo:
   Enabled: false
+ShadowingOuterLocalVariable:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
