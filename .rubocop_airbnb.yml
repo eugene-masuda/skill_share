@@ -9,6 +9,10 @@ LineLength:
   Max: 150
 EnumHash:
   Enabled: false
+MethodCallWithoutArgsParentheses: 
+  Enabled: false
+BelongsTo:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
