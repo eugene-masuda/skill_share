@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
+  
   root 'pages#home'
   get '/users/:id', to: 'users#show'
   get '/dashboard', to: 'users#dashboard'
   get '/selling_orders', to: 'orders#selling_orders'
   get '/buying_orders', to: 'orders#buying_orders'
+  get '/all_requests', to: 'requests#list'
+  get '/request_offers/:id', to: 'requests#offers', as: 'request_offers'
   post '/users/edit', to: 'users#update'
   put '/orders/:id/complete', to: 'orders#complete', as: 'complete_order'
 
@@ -15,6 +18,8 @@ Rails.application.routes.draw do
     end
     resources :orders, only: [:create]
   end
+
+  resources :requests
   
   devise_for :users, 
   path: '', 
