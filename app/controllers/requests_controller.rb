@@ -2,13 +2,21 @@ class RequestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_request, except: [:new, :create, :index, :list, :my_offers]
   before_action :is_authorised, only: [:edit, :update, :destroy, :offers]
+  before_action :set_categories, only: [:new, :edit, :list]
   def index
   end
 
   def new
+    @request = current_user.requests.build
   end
 
   def create
+    @request = current_user.requests.build(request_params)
+    if @request.save
+      redirect_to requests_path, notice: "Saved..."
+    else
+      redirect_to request.referrer, flash: {error: @request.errors.full_messages.join(', ')}
+    end
   end
 
   def edit
@@ -27,6 +35,10 @@ class RequestsController < ApplicationController
   end
 
   private
+
+  def set_categories
+    @categories = Category.all
+  end
 
   def set_request
     @request = Request.find(params[:id])
