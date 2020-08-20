@@ -11,6 +11,7 @@
     "dropzone": "^5.7.2",
     "jquery": "^3.5.1",
     "noty": "^3.2.0-beta",
+    "raty-js": "^2.9.0",
     "trix": "^1.2.0",
     "turbolinks": "^5.2.0"
   },
