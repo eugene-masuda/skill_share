@@ -1,2 +1,70 @@
-<h1>Requests#edit</h1>
-<p>Find me in app/views/requests/edit.html.erb</p>
+<section class="section">
+    <div class="container">
+        <div class="form-container">
+            <p class="title is-4 has-text-centered">希望するサービス</p>
+
+            <%= form_for @request do |f| %>
+                <div class="field">
+                    <label class="label">題名</label>
+                    <%= f.text_field :title, placeholder: "希望するサービス", class: "input" %>
+                </div>
+                <div class="field">
+                    <label class="label">詳細</label>
+                    <%= f.text_area :description, placeholder: "希望するサービスの説明", class: "textarea" %>
+                </div>
+                <div class="field">
+                    <label class="label">カテゴリー選択</label>
+                    <div class="select is-fullwidth">
+                        <%= f.select(:category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, selected: @request.category_id)) %>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">期間</label>
+                    <%= f.number_field :delivery, placeholder: "1-30 日", class: "input" %>
+                </div>
+                <div class="field">
+                    <label class="label">希望金額</label>
+                    <%= f.number_field :budget, placeholder: "金額", class: "input" %>
+                </div>
+                <div class="field">
+                    <label class="label">ファイル添付</label>
+                    <div class="file is-warning has-name">
+                        <label class="file-label">
+                            <%= f.file_field :attachment_file, class: "file-input" %>
+                            <span class="file-cta"><span class="file-label">ファイル選択</span></span>
+                            <span class="file-name" id="file-name">ファイル添付なし</span>
+                        </label>
+                    </div>
+                </div>
+
+                <% if @request.attachment_file.attached? %>
+                    <p>
+                        <%= link_to url_for(@request.attachment_file), 
+                                        class: "tag small is-warning m-t-20",  
+                                        download: "Attachment_#{@request.attachment_file.id}" do %>
+                            <i class="fas fa-paperclip fa-lg p-r-5"></i> <%= @request.attachment_file.filename %>
+
+                        <% end %>
+                    </p>
+                <% end %>
+
+                <div class="field has-text-centered">
+                    <%= f.submit '送信する', class: "button is-primary" %>
+                </div>
+              
+            <% end %>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(document).ready(function() {
+        var file = $('.file-input');
+        file.change(function(e) {
+            if (file[0].files.length > 0) {
+                var attachment = file[0].files[0];
+                $('.file-name').text(attachment.name + " (" + attachment.size + " bytes)");
+            }
+        })
+    })
+</script>
