@@ -49,6 +49,14 @@ class RequestsController < ApplicationController
     end
   end
 
+  def offers
+    @offers = @request.offers
+  end
+
+  def my_offers
+    @offers = current_user.offers
+  end
+
   private
 
   def set_categories
