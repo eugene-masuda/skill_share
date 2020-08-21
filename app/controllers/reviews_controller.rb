@@ -11,12 +11,6 @@ class ReviewsController < ApplicationController
                 review.gig = order.gig
                 review.buyer = current_user
                 review.seller = order.seller
-
-                if review.save
-                    flash[:notice] = "Saved..."
-                else
-                    flash[:alert] = "Cannot create review"
-                end
             end
         else
             flash[:alert] = "Invalid order"
