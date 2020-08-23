@@ -44,29 +44,57 @@ $sides: (top, bottom, left, right);
 }
 
 .dropzone {
-  border: 2px dashed #0087f7 !important;
+  border: 2px dashed #0087F7 !important;
   border-radius: 5px;
   background: white;
-  padding: 20px 20px;
-  min-height: 150px;
-  }
-  
-  .dropzone .dz-message {
-  text-align: center;
-  font-size: 1.5em;
+}
+
+.dropzone .dz-message {
   font-weight: 400;
-  margin: 2em 0; }
-  .dropzone .dz-message .dz-button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit; }
-  
-  .dropzone .dz-message .note {
+}
+
+.dropzone .dz-message .note {
   font-size: 0.8em;
   font-weight: 200;
   display: block;
-  margin-top: 1.4rem;}
+  margin-top: 1.4rem;
+}
+
+.form-container {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.pagination-link.is-current {
+  background-color: #00d1b2 !important;
+  border-color: #00d1b2 !important;
+}
+
+.has-bg-img {
+  background: url('/assets/home/background.jpg') center center;
+  background-size: cover;
+}
+
+.avatar {
+  position: relative;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid white;
+  }
+
+  &.online:before {
+    background-color: #1dbf73;
+  }
+
+  &.offline:before {
+    background-color: gray;
+  }
+}

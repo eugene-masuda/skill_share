@@ -17,6 +17,10 @@ ShadowingOuterLocalVariable:
   Enabled: false
 SpaceInsideHashLiteralBraces:
   Enabled: false
+Present:
+  Enabled: false
+DotPosition:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
