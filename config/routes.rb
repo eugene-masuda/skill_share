@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   
   root 'pages#home'
-  get '/users/:id', to: 'users#show'
+  get '/users/:id', to: 'users#show', as: 'users'
   get '/dashboard', to: 'users#dashboard'
   get '/selling_orders', to: 'orders#selling_orders'
   get '/buying_orders', to: 'orders#buying_orders'
