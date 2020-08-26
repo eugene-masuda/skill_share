@@ -21,6 +21,8 @@ Present:
   Enabled: false
 DotPosition:
   Enabled: false
+RedundantReturn:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
