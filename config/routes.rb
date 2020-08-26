@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get '/request_offers/:id', to: 'requests#offers', as: 'request_offers'
   get '/settings/payment', to: 'users#payment', as: 'settings_payment'
   get '/settings/payout', to: 'users#payout', as: 'settings_payout'
+  get '/gigs/:id/checkout/:pricing_type', to: 'gigs#checkout', as: 'checkout'
+
 
   post '/users/edit', to: 'users#update'
   post '/offers', to: 'offers#create'
