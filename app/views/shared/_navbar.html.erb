@@ -45,7 +45,7 @@
             <% else %>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        <figure class="image is-24x24 m-r-5">
+                        <figure class="image is-24x24 m-r-5 avatar <%= current_user.status ? "online" : "offline" %>">
                             <%= image_tag avatar_url(current_user), class: "is-rounded" %>
                         </figure>
                         <%= current_user.full_name %>
@@ -99,8 +99,8 @@
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">Settings</a>
                     <div class="navbar-dropdown">
-                        <a class="navbar-item">Payment Method</a>
-                        <a class="navbar-item">Payout Method</a>
+                        <%= link_to 'Payment Method', settings_payment_path, class: "navbar-item" %>
+                        <%= link_to 'Payout Method', settings_payout_path, class: "navbar-item" %>
                     </div>
                 </div>
             </div>
