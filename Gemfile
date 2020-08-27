@@ -33,6 +33,11 @@ gem 'omniauth-facebook', '= 5.0.0'
 gem 'faker', '=1.9.3'
 gem 'kaminari'
 gem 'stripe'
+gem 'trestle'
+gem 'trestle-auth'
+gem 'trestle-search'
+gem 'trestle-tinymce'
+gem 'activemerchant'
 gem 'aws-sdk-s3', require: false
 gem 'mini_magick'
 group :development, :test do
