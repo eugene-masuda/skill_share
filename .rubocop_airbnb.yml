@@ -23,6 +23,8 @@ DotPosition:
   Enabled: false
 RedundantReturn:
   Enabled: false
+AlignArguments:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
