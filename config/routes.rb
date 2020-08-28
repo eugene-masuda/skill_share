@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   
+  get 'message/create'
   root 'pages#home'
   get '/users/:id', to: 'users#show', as: 'users'
   get '/dashboard', to: 'users#dashboard'

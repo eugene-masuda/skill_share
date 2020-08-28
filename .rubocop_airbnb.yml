@@ -25,6 +25,8 @@ RedundantReturn:
   Enabled: false
 AlignArguments:
   Enabled: false
+RedundantSelf:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
