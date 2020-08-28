@@ -27,6 +27,8 @@ AlignArguments:
   Enabled: false
 RedundantSelf:
   Enabled: false
+Blank:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
