@@ -44,8 +44,8 @@ class OrdersController < ApplicationController
   private
 
   def is_authorised
-    redirect_to dashboard_path, 
-        alert: "You don't have permission" unless Order.where("id = ? AND (seller_id = ? OR buyer_id = ?", 
+    redirect_to dashboard_path,
+        alert: "You don't have permission" unless Order.where("id = ? AND (seller_id = ? OR buyer_id = ?",
                                                                 params[:id], current_user.id, current_user.id)
   end
 

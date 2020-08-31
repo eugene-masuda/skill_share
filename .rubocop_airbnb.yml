@@ -29,6 +29,11 @@ RedundantSelf:
   Enabled: false
 Blank:
   Enabled: false
+MultilineIfModifier:
+  Enabled: false
+SimpleModifierConditional:
+  Enabled: false
+
 AllCops:
   # 除外
   Exclude:
@@ -41,3 +46,4 @@ AllCops:
     - 'node_modules/**/*'
     - '.git/**/*'
     - 'spec/spec_helper.rb'
+    - 'app/spec_helper.rb'
