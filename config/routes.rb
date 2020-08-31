@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/orders/:id', to: 'orders#show', as: "order_detail"
   get '/all_requests', to: 'requests#list'
   get '/search', to: 'pages#search'
+  get '/calendar', to: 'pages#calendar'
   get '/my_offers', to: 'requests#my_offers'
   get '/request_offers/:id', to: 'requests#offers', as: 'request_offers'
   get '/settings/payment', to: 'users#payment', as: 'settings_payment'
