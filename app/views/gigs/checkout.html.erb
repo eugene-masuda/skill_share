@@ -66,10 +66,10 @@
 
                                     <article class="media">
                                         <div class="media-content">
-                                            手数料 (10%)
+                                            手数料 (<%= (@rate * 100).to_i %>%)
                                         </div>
                                         <div class="media-right">
-                                            $<%= '%.2f' % (@pricing.price * 0.1) %>
+                                            $<%= '%.2f' % (@pricing.price * @rate) %>
                                         </div>
                                     </article>
 
@@ -78,7 +78,7 @@
                                             合計
                                         </div>
                                         <div class="media-right">
-                                            $<%= '%.2f' % (@pricing.price * 1.1) %>
+                                            $<%= '%.2f' % (@pricing.price * (@rate + 1)) %>
                                         </div>
                                     </article>
 
