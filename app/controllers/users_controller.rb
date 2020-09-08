@@ -125,9 +125,4 @@ class UsersController < ApplicationController
     end
     return redirect_to request.referrer, aler: "Cannot cancel your subscription. Contact admin."
   end
-
-  private
-  def current_user_params
-    params.require(:user).permit(:from, :about, :status, :language, :avatar)
-  end
 end

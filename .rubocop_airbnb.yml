@@ -33,7 +33,14 @@ MultilineIfModifier:
   Enabled: false
 SimpleModifierConditional:
   Enabled: false
-
+Layout/IndentationConsistency:
+  Enabled: false
+Lint/RescueException:
+  Enabled: false
+Layout/IndentFirstArgument:
+  Enabled: false
+Lint/UselessAssignment:
+  Enabled: false
 AllCops:
   # 除外
   Exclude:
