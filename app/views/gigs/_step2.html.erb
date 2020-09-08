@@ -10,20 +10,20 @@
                         <%= p.hidden_field :pricing_type %>
 
                         <div class="control">
-                            <%= p.text_field :title, placeholder: "Title", class: "input is-radiusless" %>
+                            <%= p.text_field :title, placeholder: "タイトル", class: "input is-radiusless" %>
                         </div>
 
                         <div class="control">
-                            <%= p.text_area :description, placeholder: "Description", class: "textarea is-radiusless" %>
+                            <%= p.text_area :description, placeholder: "プランの説明", class: "textarea is-radiusless" %>
                         </div>
 
                         <div class="control has-icons-right">
-                            <%= p.number_field :delivery_time, placeholder: "Delivery Time", class: "input is-radiusless", default: 1 %>
-                            <span class="icon is-small is-right">days</span>
+                            <%= p.number_field :delivery_time, placeholder: "所用期間", class: "input is-radiusless", default: 1 %>
+                            <span class="icon is-small is-right">日</span>
                         </div>
 
                         <div class="control has-icons-right">
-                            <%= p.number_field :price, placeholder: "Price", class: "input is-radiusless", default: 1 %>
+                            <%= p.number_field :price, placeholder: "料金", class: "input is-radiusless", default: 1 %>
                             <span class="icon is-small is-right">$</span>
                         </div>
 

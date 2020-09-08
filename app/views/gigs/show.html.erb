@@ -41,7 +41,7 @@
                             <div class="card-content">
                                 <article class="media">
                                     <div class="media-content">
-                                        <p><strong>About This Gig</strong></p>
+                                        <p><strong>プランの説明</strong></p>
                                         <hr>
                                         <%= @gig.description %>
                                     </div>
@@ -88,13 +88,13 @@
                                             <div class="content f-15">
                                                 <p class="m-t-30"><%= p.description %></p>
                                                 <p class="m-t-30">
-                                                    <strong><i class="far fa-clock"></i> <%= pluralize(p.delivery_time, 'Day') %> Delivery</strong>                                                    
+                                                    <strong><i class="far fa-clock"></i> 所用期間　<%= pluralize(p.delivery_time, 'Day') %> </strong>                                                    
                                                 </p>
                                             </div>
                                             <% if (!user_signed_in? && @gig.active) || (user_signed_in? && @gig.active && @gig.user_id != current_user.id) %>
                                                 <%= link_to "Continue ($#{p.price})", checkout_path(id: @gig.id, pricing_type: p.pricing_type), class: "button is-fullwidth is-danger" %>
                                             <% else %>
-                                                <button class="button is-fullwidth is-danger" disabled>Not Available</button>  
+                                                <button class="button is-fullwidth is-danger" disabled>利用できません</button>  
                                             <% end %>
                                             
                                         </div>
@@ -121,7 +121,7 @@
                                 </div>
                                 <article class="media">
                                     <div class="media-content">
-                                        <i class="fas fa-user m-r-5"></i> Member since
+                                        <i class="fas fa-user m-r-5"></i> アカウント作成日
                                     </div>
                                     <div class="media-right">
                                         <%= @gig.user.created_at.strftime('%b %Y') %>
@@ -129,7 +129,7 @@
                                 </article>
                                 <article class="media">
                                     <div class="media-content">
-                                        <i class="fas fa-map-marker-alt m-r-5"></i> From
+                                        <i class="fas fa-map-marker-alt m-r-5"></i> 出身
                                     </div>
                                     <div class="media-right">
                                         <%= @gig.user.from %>

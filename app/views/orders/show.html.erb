@@ -5,7 +5,7 @@
             <!-- LEFT SIDE -->
             <div class="column is-two-thirds">
                 <p class="menu-label">
-                    Comments on your order
+                    コメント
                 </p>
                 <hr>
                 <div id="comment-list">
@@ -25,7 +25,7 @@
                         <%= form_with model: Comment.new, id: "new-comment" do |f| %>
                             <%= f.hidden_field :order_id, value: @order.id %>
                             <div class="field">
-                                <%= f.text_area :content, class: "textarea", placeholder: "Type your comment" %>
+                                <%= f.text_area :content, class: "textarea", placeholder: "コメントを入力してください" %>
                             </div>
 
                             <div class="field is-pulled-left">
@@ -33,15 +33,15 @@
                                     <label class="file-label">
                                         <%= f.file_field :attachment_file, class: "file-input" %>
                                         <span class="file-cta">
-                                            <span class="file-label">Attachment (Optional)</span>
+                                            <span class="file-label">ファイルを添付する</span>
                                         </span>
-                                        <span class="file-name" id="file-name">No file selected</span>
+                                        <span class="file-name" id="file-name">添付しない</span>
                                     </label>
                                 </div>
                             </div>
 
                             <div class="field is-pulled-right">
-                                <%= f.submit "Post coment", class: "button is-primary" %>                          
+                                <%= f.submit "コメントを送信する", class: "button is-primary" %>                          
                             </div>
                         <% end %>
                     </div>
@@ -66,7 +66,7 @@
                         <small>
                             <p>Seller: <%= @order.seller_name %></p>
                             <br>
-                            <p>Order: <%= @order.id %></p>
+                            <p>オーダーID <%= @order.id %></p>
                             <br>
                             <p><%= @order.created_at.strftime('%d, %b %Y') %></p>  
                         </small>                    

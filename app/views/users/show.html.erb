@@ -23,14 +23,14 @@
                                 <div class="content has-text-centered">
                                     <p class="title is-5"><%= @user.full_name %></p>
                                     <% if current_user.id != @user.id %>
-                                      <a class="button is-black is-outlined is-fullwidth toggle-contact">Contact Me</a>
+                                      <a class="button is-black is-outlined is-fullwidth toggle-contact">メッセージを送る</a>
                                     <% end %>
                                 </div>
                                 <hr class="h-10">
                                 
                                 <!-- Member -->
                                 <article class="media">
-                                    <div class="media-content">Member since</div>
+                                    <div class="media-content">アカウント作成日</div>
                                     <div class="media-right">
                                         <strong><%= @user.created_at.strftime('%b %Y') %></strong>
                                     </div>
@@ -39,7 +39,7 @@
                                 
                                 <!-- From -->
                                 <article class="media">
-                                    <div class="media-content">From</div>
+                                    <div class="media-content">出身</div>
                                     <div class="media-right">
                                         <strong><%= @user.from %></strong>
                                     </div>
@@ -48,9 +48,9 @@
 
                                 <!-- Online Status -->
                                 <article class="media">
-                                    <div class="media-content">Online Status</div>
+                                    <div class="media-content">オンライン状況</div>
                                     <div class="media-right">
-                                        <strong><% if @user.status %> Online <% else %> Offline <% end %></strong>
+                                        <strong><% if @user.status %> オンライン <% else %> オフライン <% end %></strong>
                                     </div>
                                 </article>
 
@@ -67,7 +67,7 @@
                                 <article class="media">
                                     <div class="media-content">
                                         <p>
-                                            <strong>About Yourself</strong>
+                                            <strong>プロフィール</strong>
                                             <br>
                                             <%= @user.about %>
                                         </p>
@@ -79,7 +79,7 @@
                                 <article class="media">
                                     <div class="media-content">
                                         <p>
-                                            <strong>Language</strong>
+                                            <strong>言語</strong>
                                             <br>
                                             <%= @user.language %>
                                         </p>
@@ -141,7 +141,7 @@
                 </div>
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-header-title">Latest Reviews</div>
+                        <div class="card-header-title">最新レビュー</div>
                     </div>
                     <div class="card-content">
                        <!-- Sample Reviews -->
@@ -181,7 +181,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
         <header class="modal-card-head">
-            <p class="modal-card-title">Send a Message</p>
+            <p class="modal-card-title">メッセージを送る</p>
             <button class="delete toggle-contact" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
@@ -195,12 +195,11 @@
                         </div>
                         <div class="card-content">
                             <hr>
-                            <strong>Please include:</strong>
+                            <strong>入力してください</strong>
                             <ul class="is-size-7" style="list-style:initial">
-                                <li>Project description</li>
-                                <li>Specific instructions</li>
-                                <li>Relevant files</li>
-                                <li>Your budget</li>
+                                <li>プロジェクトの説明</li>
+                                <li>関連ファイル</li>
+                                <li>予算</li>
                             </ul>
                         </div>
                      </div>

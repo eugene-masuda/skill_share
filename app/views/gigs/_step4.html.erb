@@ -1,11 +1,6 @@
 <div class="step-content <%= 'is-active' if @step == 4 %>">
     <div class="field">
-        <label for="" class="label">Youtube Code</label>
-        <%= f.text_field :video, autocomplete: "video url", class: "input" %>
-    </div>
-
-    <div class="field">
-        <label for="" class="label">Build your Gig Gallery</label>
+        <label for="" class="label">写真を追加してください</label>
         <div class="control">
             <div class="m-b-20">
                 <div class="dropzone" id="myDropzone" action="/gigs/<%= @gig.id %>/upload_photo"></div>
