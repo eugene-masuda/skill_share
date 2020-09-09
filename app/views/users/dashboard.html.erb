@@ -35,7 +35,7 @@
                                 
                                 <!-- Member -->
                                 <article class="media">
-                                    <div class="media-content">Member since</div>
+                                    <div class="media-content">アカウント作成日</div>
                                     <div class="media-right">
                                         <strong><%= current_user.created_at.strftime('%b %Y') %></strong>
                                     </div>
@@ -45,7 +45,7 @@
                                 <!-- From -->
                                 <article>
                                     <div class="media">
-                                        <div class="media-content">From</div>
+                                        <div class="media-content">出身</div>
                                         <div class="media-right">
                                             <strong><%= current_user.from %></strong> <i class="toggle far fa-edit" aria-controls="user-from"></i>
                                         </div>
@@ -67,7 +67,7 @@
                                 <!-- Online Status -->
                                 <article>
                                     <div class="media">
-                                        <div class="media-content">Online Status</div>
+                                        <div class="media-content">オンライン状況</div>
                                         <div class="media-right">
                                             <strong><% if current_user.status %> Online <% else %> Offline <% end %></strong> <i class="toggle far fa-edit" aria-controls="user-status"></i>
                                         </div>
@@ -89,15 +89,14 @@
                                     <hr class="h-10">
                                     <article>
                                         <div class="media">
-                                            <div class="media-content">Subscription</div>
+                                            <div class="media-content">サブスクリプション</div>
                                             <div class="media-right">
                                                 <strong><% if @plan %> <%= @plan.nickname %> <% end %></strong> <i class="toggle far fa-edit" aria-controls="user-subscription"></i>
                                             </div>
                                         </div>
 
                                         <div class="content">
-                                            <%= form_with url: remove_subscription_path, method: :delete, html: { id: 'user-subscription', class: 'is-hidden' } do |f| %>
-                                                <small>Expire at: <%= @subscription.expired_at %></small>                 
+                                            <%= form_with url: remove_subscription_path, method: :delete, html: { id: 'user-subscription', class: 'is-hidden' } do |f| %>               
                                                 <%= f.submit "Cancel My Subscription", class: "button is-danger is-fullwidth m-t-20" %>
                                             <% end %>
                                         </div>
@@ -117,7 +116,7 @@
                                     <div class="media">
                                         <div class="media-content">
                                             <p>
-                                                <strong>About Yourself</strong>
+                                                <strong>プロフィール</strong>
                                                 <br>
                                                 <%= current_user.about %>
                                             </p>
@@ -144,7 +143,7 @@
                                     <div class="media">
                                         <div class="media-content">
                                             <p>
-                                                <strong>Language</strong>
+                                                <strong>言語</strong>
                                                 <br>
                                                 <%= current_user.language %>
                                             </p>
@@ -166,19 +165,6 @@
 
                                 </article>
                                 <hr class="h-10">
-                                <!-- Linked Account -->
-                                <article class="media">
-                                    <div class="content">
-                                        <p>
-                                            <strong>Linked Account</strong><br/>
-                                            <% if current_user.provider %>
-                                                <span class="has-text-success">Facebook verified</span>
-                                            <% else %>
-                                                <%= link_to 'Connect to Facebook', user_facebook_omniauth_authorize_path, class: "has-text-danger" %>
-                                            <% end %>
-                                        </p>
-                                    </div>
-                                </article>
                             </div>
                         </div>
                     </div>
@@ -202,7 +188,7 @@
                                 </div>
 
                                 <div class="card-content">
-                                    <strong>Create a new gig</strong>
+                                    <strong>プランを作成する</strong>
                                 </div>    
 
                             </div>
