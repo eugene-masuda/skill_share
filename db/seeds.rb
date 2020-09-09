@@ -12,7 +12,7 @@
 #    )
 #end
 
- Create dummy users
+ Create dummy user
 5.times do
    user = User.create(
       full_name: Faker::Name.name,
