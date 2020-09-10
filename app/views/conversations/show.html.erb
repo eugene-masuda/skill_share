@@ -4,7 +4,7 @@
         <div class="column is-4">
             <nav class="menu">
                 <p class="menu-label">
-                    All Conversations
+                    全てのメッセージ
                 </p>
                 <ul class="menu-list">
                     <% @conversations.each do |c| %>
@@ -50,8 +50,8 @@
                 <div class="media-content">
                     <div class="content">
                         <h3><%= @user.full_name %></h3>
-                        <small>From: <%= @user.from %></small>
-                        <small>Language: <%= @user.language %></small>
+                        <small>出身: <%= @user.from %></small>
+                        <small>言語: <%= @user.language %></small>
                     </div>
                 </div>
             </article>
@@ -70,7 +70,7 @@
                     <%= f.hidden_field :receiver_id, value: @user.id %>
                     <div class="field has-addons">
                         <div class="control" style="width: 100%">
-                            <%= f.text_field :content, class: "input", placeholder: "Type a message..." %>
+                            <%= f.text_field :content, class: "input", placeholder: "メッセージを入力してください" %>
                         </div>
                         <div class="control">
                             <%= f.submit "Send", class: "button is-primary" %>
