@@ -1,25 +1,35 @@
-# README
+# skill-share
+プログラミングを学習しているときに、メンターや質問できる人を探せるサービスがあれば便利だと思って作りました。  
+メンターなどを探すだけでなく、webデザイナーを探したり、色々なスキルを持つ人を探すことができます。
+***
+# 環境
+_Development Environment_  
+MacOS  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+_Languages_  
+HTML  
+CSS  
+JavaScript  
+Ruby(2.6.5)  
+_main framework_
+Ruby on Rails(6.0.2)
 
-Things you may want to cover:
+_CSS framework_
+bulma
 
-* Ruby version
+_JavaScript library_
+jQuery  
 
-* System dependencies
+_DB_
+PostgreSQL  
 
-* Configuration
+_Infrastructure_
+heroku  
 
-* Database creation
+_Other_
+yarn
+docker
+circle ci
+***
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# skill_share
+# 実装機能
