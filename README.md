@@ -33,3 +33,7 @@ circle ci
 ***
 
 # 実装機能
+プラン作成機能
+![giphy-プラン作成](https://user-images.githubusercontent.com/63545165/93014364-7f4b9180-f5eb-11ea-85e3-f59f95fd3199.gif)
+
+
