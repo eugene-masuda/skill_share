@@ -3,37 +3,41 @@
 メンターなどを探すだけでなく、webデザイナーを探したり、色々なスキルを持つ人を探すことができます。
 ***
 # 環境
-_Development Environment_  
+#### Development Environment  
 MacOS  
 
-_Languages_  
+#### Languages  
 HTML  
 CSS  
 JavaScript  
 Ruby(2.6.5)  
-_main framework_
+#### main framework
 Ruby on Rails(6.0.2)
 
-_CSS framework_
+#### CSS framework
 bulma
 
-_JavaScript library_
+#### JavaScript library
 jQuery  
 
-_DB_
+#### DB
 PostgreSQL  
 
-_Infrastructure_
+#### Infrastructure
 heroku  
 
-_Other_
+#### Other
 yarn
 docker
 circle ci
 ***
 
 # 実装機能
-プラン作成機能
-![giphy-プラン作成](https://user-images.githubusercontent.com/63545165/93014364-7f4b9180-f5eb-11ea-85e3-f59f95fd3199.gif)
-
-
+#### プラン作成機能    
+![giphy-プラン作成](https://user-images.githubusercontent.com/63545165/93014364-7f4b9180-f5eb-11ea-85e3-f59f95fd3199.gif)  
+#### クレジットカード登録機能  
+カード番号4242 4242 4242 4242 4242    
+有効期限　適当に期限切れにならないように入力してください  
+CVC番号　適当に入力してください  
+![クレジットカード登録](https://user-images.githubusercontent.com/63545165/93174181-86e47500-f768-11ea-84d3-89d91a607275.gif)  
+#### 購入機能
