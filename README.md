@@ -57,6 +57,8 @@ CVC番号　適当に入力してください
 ![評価　](https://user-images.githubusercontent.com/63545165/93184509-4c360900-f777-11ea-971a-0334a5174804.gif)  
 
 #### サブスクリプション請求  
+![サブスクリプション](https://user-images.githubusercontent.com/63545165/93185475-6b816600-f778-11ea-9fc7-b7928c0b1c3f.gif)
+
 
 
 
