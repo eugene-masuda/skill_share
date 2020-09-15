@@ -46,5 +46,12 @@ CVC番号　適当に入力してください
 ![購入画面](https://user-images.githubusercontent.com/63545165/93177917-78995780-f76e-11ea-989b-2431af8bcc3d.gif)  
 
 #### 購入後のやりとり  
+![購入後のやりとりgif](https://user-images.githubusercontent.com/63545165/93179454-aaabb900-f770-11ea-9d5f-ae0cabfeab21.gif)  
+ローカル環境では更新しなくてもコメントが反映されるのですが、本番環境だと更新しないとコメントが反映されないです。  
+
+#### ユーザーにメッセージを送信する  
+
+
+
 
 
