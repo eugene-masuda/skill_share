@@ -1,11 +1,11 @@
 <section class="section">
     <div class="container">
-        <p class="title">Buying Orders</p>
+        <p class="title">購入リスト</p>
 
         <table class="table is-fullwidth">
             <thead>
                 <tr>
-                    <th>日付</th>
+                    <th>購入日</th>
                     <th>購入者</th>
                     <th>タイトル</th>
                     <th>有効期限</th>
@@ -28,17 +28,17 @@
                           <%= link_to o.title, order_detail_path(o) %>
                         </td>
                         <td><%= o.due_date.strftime('%d %b %Y') %></td>
-                        <td><%= o.amount %></td>
+                        <td><%= o.amount %>円</td>
                         <td>
-                            <span class="tag <%= 'is-warning' if o.inprogress? %> <%= 'is-success' if o.completed? %>">
+                            <span class="tag <%= 'is-warning' if o.進行中? %> <%= 'is-success' if o.完了? %>">
                                 <%= o.status.capitalize %>
                             </span>
                         </td>
                         <td>
-                            <% if !o.completed? %>
-                                <%= link_to 'Mark Complete', complete_order_path(o), method: :put, class: "button is-small is-primary #{'is-hidden' if o.completed?}" %>  
+                            <% if !o.完了? %>
+                                <%= link_to 'Mark Complete', complete_order_path(o), method: :put, class: "button is-small is-primary #{'is-hidden' if o.完了?}" %>  
                             <% else %>
-                                <a class="button is-small is-outlined is-danger toggle-modal" aria-control="<%= o.id %>">Rating</a>
+                                <a class="button is-small is-outlined is-danger toggle-modal" aria-control="<%= o.id %>">評価する</a>
 
                                 <div class="modal" id="<%= o.id %>">
                                     <div class="modal-background"></div>
@@ -52,8 +52,8 @@
                                                 <div class="field">
                                                     <%= f.text_area :review, class: "textarea" %>
                                                 </div>
-                                                <a class="toggle-modal button is-light" aria-control="<%= o.id %>">Cancel</a>
-                                                <%= f.submit "Add Review", class: "button is-danger" %>
+                                                <a class="toggle-modal button is-light" aria-control="<%= o.id %>">キャンセル</a>
+                                                <%= f.submit "レビューする", class: "button is-danger" %>
                                             <% end %>
                                         </div>
                                     </div>
