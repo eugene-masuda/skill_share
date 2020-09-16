@@ -82,13 +82,13 @@
                                                     <strong><%= p.title %></strong>                                                                                                        
                                                 </div>
                                                 <div class="media-right">
-                                                    <p class="title is-4">$<%= p.price %></p>
+                                                    <p class="title is-4"><%= p.price %>円</p>
                                                 </div>                                                
                                             </div>
                                             <div class="content f-15">
                                                 <p class="m-t-30"><%= p.description %></p>
                                                 <p class="m-t-30">
-                                                    <strong><i class="far fa-clock"></i> 所用期間　<%= pluralize(p.delivery_time, 'Day') %> </strong>                                                    
+                                                    <strong><i class="far fa-clock"></i> 有効期間　<%= pluralize(p.delivery_time, 'Day') %> </strong>                                                    
                                                 </p>
                                             </div>
                                             <% if (!user_signed_in? && @gig.active) || (user_signed_in? && @gig.active && @gig.user_id != current_user.id) %>

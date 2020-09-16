@@ -47,29 +47,29 @@
                                   <!-- Price Range -->
                                   <label class="label">料金</label>
                                   <div class="field has-addons">
-                                      <p class="control">
-                                          <a class="button is-static">$</a>
-                                      </p>
                                       <p class="control">                                            
-                                          <%= number_field_tag 'min', @min || '', class: "input", placeholder: "Min" %>                                        
+                                          <%= number_field_tag 'min', @min || '', class: "input", placeholder: "最小" %>                                        
+                                      </p>
+                                      <p class="control">
+                                          <a class="button is-static">円</a>
                                       </p>
                                   </div>
                                   <div class="field has-addons">
                                       <p class="control">
-                                          <a class="button is-static">$</a>
+                                          <%= number_field_tag 'max', @max || '', class: "input", placeholder: "最大" %>
                                       </p>
                                       <p class="control">
-                                          <%= number_field_tag 'max', @max || '', class: "input", placeholder: "Max" %>
+                                          <a class="button is-static">円</a>
                                       </p>
                                   </div>
                                   <hr/>  
                                   <!-- Delivery Time -->
-                                  <label class="label">所用期間</label>                                    
-                                  <%= radio_button_tag 'delivery', "1", checked = "1" == @delivery %> 1 days <br>
-                                  <%= radio_button_tag 'delivery', "3", checked = "3" == @delivery %> 3 days <br>
-                                  <%= radio_button_tag 'delivery', "7", checked = "7" == @delivery %> 7 days <br>
-                                  <%= radio_button_tag 'delivery', "10", checked = "10" == @delivery %> 10 days <br>
-                                  <%= radio_button_tag 'delivery', "15", checked = "15" == @delivery %> 15 days <br>
+                                  <label class="label">有効期間</label>                                    
+                                  <%= radio_button_tag 'delivery', "1", checked = "1" == @delivery %> 1 日 <br>
+                                  <%= radio_button_tag 'delivery', "3", checked = "3" == @delivery %> 3 日 <br>
+                                  <%= radio_button_tag 'delivery', "7", checked = "7" == @delivery %> 7 日 <br>
+                                  <%= radio_button_tag 'delivery', "10", checked = "10" == @delivery %> 10 日 <br>
+                                  <%= radio_button_tag 'delivery', "15", checked = "15" == @delivery %> 15 日 <br>
                                   <%= radio_button_tag 'delivery', "0", checked = "0" == @delivery %> 全て
                                   <hr/>
                                   
