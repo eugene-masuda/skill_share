@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
     if (pricing && !gig.has_single_pricing) || (pricing && pricing.basic? && gig.has_single_pricing)
       charge(gig, pricing)
     else
-      flash[:alert] = "Price is incorrect"
+      flash[:alert] = "料金は無効です"
     end
     return redirect_to buying_orders_path
   end
@@ -26,9 +26,9 @@ class OrdersController < ApplicationController
 
     if !@order.completed?
       if @order.completed!
-        flash[:notice] = "Saved..."
+        flash[:notice] = "保存しました"
       else
-        flash[:aler] = "Something went wrong..."
+        flash[:aler] = "保存できませんでした"
       end
       redirect_to request.referrer
     end
@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
     order.amount = pricing.price
 
     if order.save
-      flash[:notice] = "Your order created successfully"
+      flash[:notice] = "オーダーは作成されました"
     else
       flash[:alert] = order.errors.full_messages.join(', ')
     end

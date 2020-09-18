@@ -4,15 +4,15 @@ class SubscriptionsController < ApplicationController
 
   def subscribe
     if !current_user.stripe_id?
-      return redirect_to edit_payment_path, alert: "Please add your card before subscribing"
+      return redirect_to edit_payment_path, alert: "クレジットカードを追加してください"
     end
     plan = Stripe::Plan.retrieve(params[:plan_id])
     if !plan.id
-      return redirect_to request.referrer, alert: "Invalid Plan"
+      return redirect_to request.referrer, alert: "プランは無効です"
     end
     subscription = Subscription.exists?(user_id: current_user.id)
     if subscription.present?
-      return redirect_to request.referrer, alert: "You cannot subscribe to another plan"
+      return redirect_to request.referrer, alert: "すでに他のプランを契約中です"
     end
     # Create Stripe Subscription
     stripe_sub = Stripe::Subscription.create(
@@ -25,7 +25,7 @@ class SubscriptionsController < ApplicationController
         plan_id: plan.id,
         sub_id: stripe_sub.id
       )
-    return redirect_to dashboard_path, notice: "Subscribed successfully"
+    return redirect_to dashboard_path, notice: "サブスクリプションのお支払いが成功しました"
   end
 
   def webhook

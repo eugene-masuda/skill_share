@@ -10,7 +10,7 @@ class ConversationsController < ApplicationController
                                         current_user.id, params[:id],
                                         params[:id], current_user.id).first
     if !@conversation.present?
-      redirect_to conversations_path, alert: "Invalid conversation"
+      redirect_to conversations_path, alert: "トークは無効です"
     else
       @messages = Message.where(conversation_id: @conversation.id)
     end

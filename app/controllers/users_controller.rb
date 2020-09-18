@@ -16,9 +16,9 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(current_user_params)
-      flash[:notice] = "Saved..."
+      flash[:notice] = "保存しました"
     else
-      flash[:alert] = "Cannot update..."
+      flash[:alert] = "保存できませんでした"
     end
     redirect_to dashboard_path
   end
@@ -41,9 +41,9 @@ class UsersController < ApplicationController
     end
 
     if current_user.update(stripe_id: customer.id, stripe_last_4: customer.sources.data.first["last4"])
-      flash[:notice] = "New card is saved"
+      flash[:notice] = "あなたのカードは保存されました"
     else
-      flash[:alert] = "Invalid card"
+      flash[:alert] = "無効のカードです"
     end
     redirect_to request.referrer
   rescue Stripe::CardError => e
@@ -53,9 +53,9 @@ class UsersController < ApplicationController
 
   def update_payout
     if current_user.update(paypal: params[:paypal])
-      flash[:notice] = "Update payout successfully"
+      flash[:notice] = "カードの変更が成功しました"
     else
-      flash[:alert] = "Something went wrong"
+      flash[:alert] = "カードの変更に失敗しました"
     end
     redirect_to request.referrer
   end
@@ -121,8 +121,8 @@ class UsersController < ApplicationController
 
     if @subscription.present? && @subscription.sub_id
       Stripe::Subscription.delete(@subscription.sub_id)
-      return redirect_to request.referrer, notice: "Your subscription is cancelled"
+      return redirect_to request.referrer, notice: "あなたのサブスクリプションは削除されました"
     end
-    return redirect_to request.referrer, aler: "Cannot cancel your subscription. Contact admin."
+    return redirect_to request.referrer, aler: "サブスクリプションは削除できませんでした"
   end
 end

@@ -3,20 +3,20 @@ class ReviewsController < ApplicationController
     order = Order.find(review_params[:order_id])
     if order && current_user.id == order.buyer.id
       if Review.exists?(order_id: review_params[:order_id], buyer_id: current_user.id)
-        flash[:alert] = "You already made the review for this order"
+        flash[:alert] = "すでにレビューを作成しています"
       else
         review = Review.new(review_params)
         review.gig = order.gig
         review.buyer = current_user
         review.seller = order.seller
         if review.save
-          flash[:notice] = "Saved..."
+          flash[:notice] = "保存しました"
         else
-          flash[:alert] = "Cannot create review"
+          flash[:alert] = "レビューを作成できませんでした"
         end
       end
     else
-      flash[:alert] = "Invalid order"
+      flash[:alert] = "オーダーが無効です"
     end
     redirect_to request.referrer
   end

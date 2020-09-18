@@ -23,7 +23,7 @@
                             <%= text_field_tag 'q', '', class: "input", placeholder: "キーワードを入力してください" %>
                         </div>
                         <div class="control">
-                            <button class="button is-danger" type="submit">Search</button>
+                            <button class="button is-danger" type="submit">検索する</button>
                         </div>
                     </div>
                 <% end %>
@@ -69,36 +69,32 @@
     <nav class="navbar has-shadow" style="z-index: 5">
         <div class="container">
             <div class="navbar">
-                <%= link_to 'Dashboard', dashboard_path, class: "navbar-item" %>
+                <%= link_to 'マイページ', dashboard_path, class: "navbar-item" %>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">Selling</a>
+                    <a class="navbar-link">プラン</a>
                     <div class="navbar-dropdown">
                         <%= link_to 'プランを作成', new_gig_path, class: "navbar-item" %>
                     </div>
                 </div>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">Buying</a>
+                    <a class="navbar-link">リクエスト</a>
                     <div class="navbar-dropdown">
                         <%= link_to 'リクエスト作成', new_request_path, class: "navbar-item" %>
                         <%= link_to 'リクエスト管理', requests_path, class: "navbar-item" %>
-                    </div>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">Requests</a>
-                    <div class="navbar-dropdown">
                         <%= link_to 'リクエスト一覧', all_requests_path, class: "navbar-item" %>
                         <%= link_to 'オファー閲覧', my_offers_path, class: "navbar-item" %>
                     </div>
-                </div><div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">Orders</a>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">オーダー</a>
                     <div class="navbar-dropdown">
                         <%= link_to '売却リスト', selling_orders_path, class: "navbar-item" %>
                         <%= link_to '購入リスト', buying_orders_path, class: "navbar-item" %>
                     </div>
                 </div>
-                <%= link_to 'Messages', conversations_path, class: "navbar-item" %>
+                <%= link_to 'メッセージ', conversations_path, class: "navbar-item" %>
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link">Settings</a>
+                    <a class="navbar-link">設定</a>
                     <div class="navbar-dropdown">
                         <%= link_to '支払い設定', settings_payment_path, class: "navbar-item" %>
                     </div>

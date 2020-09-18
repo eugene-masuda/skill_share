@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   def create
     if current_user.id == message_params[:receiver_id]
-      redirect_to request.referrer, alert: "You cannot send message to yourself"
+      redirect_to request.referrer, alert: "自分自身に送信はできません"
     end
 
     conversation = Conversation.where("(sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?)",
@@ -28,9 +28,9 @@ class MessagesController < ApplicationController
         return render json: {success: true}
       end
 
-      redirect_to request.referrer, notice: "Message sent..."
+      redirect_to request.referrer, notice: "送信しました"
     else
-      redirect_to request.referrer, alert: "Cannot send the message"
+      redirect_to request.referrer, alert: "送信できませんでした"
     end
   end
 
