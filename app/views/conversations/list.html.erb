@@ -22,7 +22,7 @@
                                             <div class="media-content">
                                                 <p class="title is-6"><%= @client.full_name %></p>
                                                 <p class="subtitle is-7">
-                                                    <%= (c.last_message.user_id == current_user.id ? "You: #{c.last_message.content}" : c.last_message.content).truncate(20) %>
+                                                    <%= (c.last_message.user_id == current_user.id ? "あなた: #{c.last_message.content}" : c.last_message.content).truncate(20) %>
                                                 </p>
                                             </div>
                                             <div class="media-right">

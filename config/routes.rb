@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   
   get 'message/create'
   root 'pages#home'
+  post '/pages/guest_sign_in', to: 'pages#new_guest'
   get '/users/:id', to: 'users#show', as: 'users'
   get '/dashboard', to: 'users#dashboard'
   get '/selling_orders', to: 'orders#selling_orders'

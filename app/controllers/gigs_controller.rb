@@ -15,7 +15,7 @@ class GigsController < ApplicationController
 
     if @gig.save
       @gig.pricings.create(Pricing.pricing_types.values.map { |x| { pricing_type: x } })
-      redirect_to edit_gig_path(@gig), notice: "Save..."
+      redirect_to edit_gig_path(@gig), notice: "保存しました"
     else
       redirect_to request.referrer, flash: { error: @gig.errors.full_messages }
     end
@@ -32,18 +32,18 @@ class GigsController < ApplicationController
           next;
         else
           if pricing[:title].blank? || pricing[:description].blank? || pricing[:delivery_time].blank? || pricing[:price].blank?
-            return redirect_to request.referrer, flash: { error: "Invalid pricing" }
+            return redirect_to request.referrer, flash: { error: "料金を入力してください" }
           end
         end
       end
     end
 
     if @step == 3 && gig_params[:description].blank?
-      return redirect_to request.referrer, flash: { error: "Description cannot be blank" }
+      return redirect_to request.referrer, flash: { error: "プラン説明を入力してください" }
     end
 
     if @step == 4 && @gig.photos.blank?
-      return redirect_to request.referrer, flash: { error: "You don't have any photos" }
+      return redirect_to request.referrer, flash: { error: "写真を追加してください" }
     end
 
     if @step == 5
@@ -52,20 +52,20 @@ class GigsController < ApplicationController
           next;
         else
           if pricing[:title].blank? || pricing[:description].blank? || pricing[:delivery_time].blank? || pricing[:price].blank?
-            return redirect_to edit_gig_path(@gig, step: 2), flash: { error: "Invalid pricing" }
+            return redirect_to edit_gig_path(@gig, step: 2), flash: { error: "料金を入力してください" }
           end
         end
       end
 
       if @gig.description.blank?
-        return redirect_to edit_gig_path(@gig, step: 3), flash: { error: "Description cannot be blank" }
+        return redirect_to edit_gig_path(@gig, step: 3), flash: { error: "プラン説明を入力してください" }
       elsif @gig.photos.blank?
-        return redirect_to edit_gig_path(@gig, step: 4), flash: { error: "You don't have any photos" }
+        return redirect_to edit_gig_path(@gig, step: 4), flash: { error: "写真を追加してください" }
       end
     end
 
     if @gig.update(gig_params)
-      flash[:notice] = "Saved..."
+      flash[:notice] = "保存しました"
     else
       return redirect_to request.referrer, flash: { error: @gig.errors.full_messages }
     end
@@ -99,7 +99,7 @@ class GigsController < ApplicationController
       @gig = Gig.find(params[:id])
       @pricing = @gig.pricings.find_by(pricing_type: params[:pricing_type])
     else
-      redirect_to settings_payment_path, alert: "Please add your card first"
+      redirect_to settings_payment_path, alert: "クレジットカードを追加してください"
     end
   end
 
@@ -117,7 +117,7 @@ class GigsController < ApplicationController
   end
 
   def is_authorised
-    redirect_to root_path, alert: "You do not have permission" unless current_user.id == @gig.user_id
+    redirect_to root_path, alert: "権限がありません" unless current_user.id == @gig.user_id
   end
 
   def gig_params

@@ -56,7 +56,7 @@
                                             <div class="field">
                                                 <%= f.text_field :from, autofocus: true, autocomplete: 'form', class: 'input'%>
                                             </div>
-                                            <a class="toggle button is-light" aria-controls="user-from">Cancel</a>
+                                            <a class="toggle button is-light" aria-controls="user-from">キャンセル</a>
                                             <%= f.submit "Save", class: "button is-danger" %>
                                         <% end %>
                                     </div>
@@ -69,7 +69,7 @@
                                     <div class="media">
                                         <div class="media-content">オンライン状況</div>
                                         <div class="media-right">
-                                            <strong><% if current_user.status %> Online <% else %> Offline <% end %></strong> <i class="toggle far fa-edit" aria-controls="user-status"></i>
+                                            <strong><% if current_user.status %> オンライン <% else %> オフライン <% end %></strong> <i class="toggle far fa-edit" aria-controls="user-status"></i>
                                         </div>
                                     </div>
 
@@ -78,7 +78,7 @@
                                             <div class="field">
                                                 <%= f.select(:status, options_for_select([["Online", true], ["Offline", false]]), {}, {class: "select is-fullwidth"}) %>
                                             </div>
-                                            <a class="toggle button is-light" aria-controls="user-status">Cancel</a>
+                                            <a class="toggle button is-light" aria-controls="user-status">キャンセル</a>
                                             <%= f.submit "Save", class: "button is-danger" %>
                                         <% end %>
                                     </div>
