@@ -124,11 +124,11 @@
 
                                     <a class="has-text-danger is-block card-footer-item has-text-right">
                                         <% if !basic_price.nil? %>
-                                            <span class="small-title">STARTING AT</span> 
-                                            <strong>$<%= basic_price.price %></strong>                                            
+                                            <span class="small-title">開始</span> 
+                                            <strong><%= basic_price.price %>円</strong>                                            
                                         <% else %>
                                             <strong>
-                                                <span class="small-title has-text-dark">NO PRICING YET</span>
+                                                <span class="small-title has-text-dark">価格未定</span>
                                             </strong>
                                         <% end %>
                                     </a>

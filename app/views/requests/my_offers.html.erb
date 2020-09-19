@@ -7,7 +7,7 @@
                     <th>日付</th>
                     <th>タイトル名</th>
                     <th>予算</th>
-                    <th>オファー数</th>
+                    <th>オファーされた金額</th>
                     <th>有効期間</th>
                     <th>状況</th>
                 </tr>
@@ -24,13 +24,13 @@
                         <td>
                             <%= link_to o.request.title, request_path(o.request) %>
                         </td>
-                        <td>$<%= o.request.budget %></td>
-                        <td>$<%= o.amount %></td>
+                        <td><%= o.request.budget %>円</td>
+                        <td><%= o.amount %>円</td>
                         <td><%= pluralize(o.days, 'day') %></td>
                         <td>
-                            <span class="tag <%= 'is-warning' if o.pending? %> 
-                                             <%= 'is-success' if o.accepted? %>
-                                             <%= 'is-danger' if o.rejected? %> ">
+                            <span class="tag <%= 'is-warning' if o.保留中? %> 
+                                             <%= 'is-success' if o.認証? %>
+                                             <%= 'is-danger' if o.拒否? %> ">
                                 <%= o.status.capitalize %>
                             </span>
                         </td>

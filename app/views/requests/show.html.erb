@@ -15,7 +15,7 @@
                                     <%= @request.category.name %>
                                     <span class="is-pulled-right">投稿日 <%= @request.created_at.strftime('%d, %b %Y') %></span>
                                 </p>
-                                必要日数 <%= @request.delivery %> 日 | オファー: <%= @request.offers.count %> | 予算: $<%= @request.budget %>
+                                有効期限 <%= @request.delivery %> 日 | オファー: <%= @request.offers.count %> | 予算: <%= @request.budget %>円
                             </div>
                         </article>
                     </div>
@@ -45,7 +45,7 @@
                     <div class="column">
                         <div class="card">
                             <div class="card-content">
-                                <strong>バイヤー情報</strong> 
+                                <strong>購入者情報</strong> 
                                 <hr/>
 
                                 <div class="content">
@@ -114,7 +114,7 @@
                                 <%= f.text_field :amount, class: "input" %>
                             </div>
                             <div class="field">
-                                <label for="" class="label">日数</label>
+                                <label for="" class="label">有効期限</label>
                                 <%= f.text_field :days, class: "input" %>
                             </div>
                             <div class="field">

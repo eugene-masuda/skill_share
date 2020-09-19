@@ -7,7 +7,7 @@
                     <th>日付</th>
                     <th>ユーザー名</th>
                     <th>備考欄</th>
-                    <th>オファー数</th>
+                    <th>オファーされた金額</th>
                     <th>所用期間</th>
                     <th>状況</th>
                     <th>アクション</th>
@@ -28,26 +28,26 @@
                             </figure>
                         </td>
                         <td><%= o.note %></td>
-                        <td>$<%= o.amount %></td>
-                        <td><%= pluralize(o.days, 'day') %></td>
+                        <td><%= o.amount %>円</td>
+                        <td><%= pluralize(o.days, '日') %></td>
                         <td>
-                            <span class="tag <%= 'is-warning' if o.pending? %> 
-                                             <%= 'is-success' if o.accepted? %>
-                                             <%= 'is-danger' if o.rejected? %> ">
+                            <span class="tag <%= 'is-warning' if o.保留中? %> 
+                                             <%= 'is-success' if o.認証? %>
+                                             <%= 'is-danger' if o.拒否? %> ">
                                 <%= o.status.capitalize %>
                             </span>
                         </td>
                         <td>
                             <%= link_to accept_offer_path(o), method: :put,
                                         data: { confirm: "Are you sure?" },
-                                        class: "button is-small is-primary is-outlined #{'is-hidden' if !o.pending?}" do %>
+                                        class: "button is-small is-primary is-outlined #{'is-hidden' if !o.保留中?}" do %>
                                 <span class="icon"><i class="far fa-check-circle fa-lg"></i></span>
                                 <span>認証する</span>
                             <% end %>
 
                             <%= link_to reject_offer_path(o), method: :put,
                                         data: { confirm: "Are you sure?" },
-                                        class: "button is-small is-danger is-outlined #{'is-hidden' if !o.pending?}" do %>
+                                        class: "button is-small is-danger is-outlined #{'is-hidden' if !o.保留中?}" do %>
                                 <span class="icon"><i class="far fa-times-circle fa-lg"></i></span>
                                 <span>拒否する</span>
                             <% end %>
