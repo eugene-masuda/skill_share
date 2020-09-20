@@ -24,8 +24,8 @@ class OrdersController < ApplicationController
   def complete
     @order = Order.find(params[:id])
 
-    if !@order.completed?
-      if @order.completed!
+    if !@order.完了?
+      if @order.完了!
         flash[:notice] = "保存しました"
       else
         flash[:aler] = "保存できませんでした"

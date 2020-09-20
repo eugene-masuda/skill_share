@@ -6,7 +6,7 @@
             <thead>
                 <tr>
                     <th>購入日</th>
-                    <th>購入者</th>
+                    <th>取引相手</th>
                     <th>タイトル</th>
                     <th>有効期限</th>
                     <th>料金</th>
@@ -36,7 +36,7 @@
                         </td>
                         <td>
                             <% if !o.完了? %>
-                                <%= link_to 'Mark Complete', complete_order_path(o), method: :put, class: "button is-small is-primary #{'is-hidden' if o.完了?}" %>  
+                                <%= link_to '取引を完了する', complete_order_path(o), method: :put, class: "button is-small is-primary #{'is-hidden' if o.完了?}" %>  
                             <% else %>
                                 <a class="button is-small is-outlined is-danger toggle-modal" aria-control="<%= o.id %>">評価する</a>
 
