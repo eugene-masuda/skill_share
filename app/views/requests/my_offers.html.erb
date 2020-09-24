@@ -26,7 +26,7 @@
                         </td>
                         <td><%= o.request.budget %>円</td>
                         <td><%= o.amount %>円</td>
-                        <td><%= pluralize(o.days, 'day') %></td>
+                        <td><%= o.days %>日</td>
                         <td>
                             <span class="tag <%= 'is-warning' if o.保留中? %> 
                                              <%= 'is-success' if o.認証? %>

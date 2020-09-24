@@ -60,7 +60,7 @@
                                             合計
                                         </div>
                                         <div class="media-right">
-                                            <%= '%.2f' % @pricing.price %>円
+                                            <%= '%.0f' % @pricing.price %>円
                                         </div>
                                     </article>
 
@@ -69,7 +69,7 @@
                                             手数料 (10%)
                                         </div>
                                         <div class="media-right">
-                                            <%= '%.2f' % (@pricing.price * 0.1) %>円
+                                            <%= '%.1f' % (@pricing.price * 0.1) %>円
                                         </div>
                                     </article>
 
@@ -78,7 +78,7 @@
                                             合計
                                         </div>
                                         <div class="media-right">
-                                            <%= '%.2f' % (@pricing.price * 1.1) %>円
+                                            <%= '%.1f' % (@pricing.price * 1.1) %>円
                                         </div>
                                     </article>
 
@@ -87,7 +87,7 @@
                                             有効期間
                                         </div>
                                         <div class="media-right">
-                                            <%= pluralize(@pricing.delivery_time, 'day') %>
+                                            <%= @pricing.delivery_time %>日
                                         </div>
                                     </article>
                                     
